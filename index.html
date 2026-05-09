@@ -1,1 +1,46 @@
 <h1>Hello world</h1>
+import java.util.Scanner;
+
+class ChatBot {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        String input;
+
+        System.out.println("ChatBot Started! Type 'bye' to exit.");
+
+        while (true) {
+
+            System.out.print("You: ");
+            input = sc.nextLine();
+
+            if (input.equalsIgnoreCase("hi") || input.equalsIgnoreCase("hii") || input.equalsIgnoreCase("hey")) {
+                System.out.println("Bot: Hello!");
+            }
+
+            else if (input.equalsIgnoreCase("how are you")) {
+                System.out.println("Bot: I'm fine 😄");
+            }
+
+            else if (input.equalsIgnoreCase("what is your name") || input.equalsIgnoreCase("whats your name bro")) {
+                System.out.println("Bot: I'm Java Bot 😄");
+            }
+
+            else if (input.toLowerCase().startsWith("my name is ")) {
+                String name = input.substring(11);
+                System.out.println("Bot: Nice to meet you " + name + " 😄");
+            }
+
+            else if (input.equalsIgnoreCase("bye")) {
+                System.out.println("Bot: Bye, have a nice day!");
+                break;
+            }
+
+            else {
+                System.out.println("Bot: I don't understand.");
+            }
+        }
+
+        sc.close();
+    }
+}
